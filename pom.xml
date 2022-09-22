@@ -84,7 +84,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <repository>com.an/${project.artifactId}</repository>
+                    <repository>asandy1023/${project.artifactId}</repository>
                     <tag>${project.version}</tag>
                     <buildArgs>
                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
