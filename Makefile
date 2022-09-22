@@ -1,10 +1,7 @@
+clean:
+	mvn clean
 deploy:
-	mvn clean deploy -DskipTests
+	mvn clean deploy
 
 install:
-	mvn clean install -DskipTests -DskipDocker
-
-release:
-	rm -f release.properties pom.xml.releaseBackup
-	mvn release:prepare -B
-	rm -f release.properties pom.xml.releaseBackup
+	mvn clean install
