@@ -13,9 +13,7 @@ Docker 映像檔發佈至Docker Hub中
 
 ## 部署 GitLab 程式倉庫
 
-Ubantu部署 GitLab-ce
-
-命令:
+### Ubantu部署 GitLab-ce
 
 * update本地套件
 ```
@@ -151,7 +149,7 @@ reboot
 ```
 systemctl enable dooker.service
 ```
-#### 部署 Master 節點
+### 部署 Master 節點
 ```
 cd /opt/kubernetes-config
 touch kubeadm.yaml
@@ -183,7 +181,7 @@ docker images
 /opt/kubernetes-config kubectl get pods -n kube-system
 ```
 
-#### 部署 Kubernetes 的 Worker 節點
+### 部署 Kubernetes 的 Worker 節點
 
 ```
 kubeadm join <MasterIP> --token <Mastertoken> 
@@ -246,7 +244,7 @@ docker run name consul -p 8500:8500 -v /tmp/consul/conf/:/consul/conf/
 -v/tmp/consul/data/:/consul/data/ -d consul
 ```
 
-### 連接 Kubernetes 叢集,查看Pod 執行
+## 連接 Kubernetes 叢集,查看Pod 執行
 
 ```
 kubectl get po -n asandy1023 -o wide
