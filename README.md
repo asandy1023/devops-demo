@@ -253,7 +253,7 @@ kubectl get po -n asandy1023 -o wide
 ```
 its show these:
 
-**NAME  READY STATUS  RESTARTS  AGE IP NODE NOMINATED NODE  READINESS GATES**
+NAME  READY STATUS  RESTARTS  AGE IP NODE NOMINATED NODE  READINESS GATES
 
 **devops-demo 1/1 Running 0   0h10m   10.32.0.6   kubernetes <none> <none>**
 
