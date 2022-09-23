@@ -70,24 +70,24 @@ docker run -d --name gitlab-runner --restart always
   -v /srv/gitlab-runner/config:/etc/gitlab-runner 
   -v /var/run/docker.sock:/var/run/docker.sock 
   gitlab/gitlab-runner:latest
-  
+  ```
 * 啟動 GitLab Runner
 ```
 sudo apt-get install --reinstall systemd
 sudo systemctl enable gitlab-runner
-
+```
 * 自啟動GitLab Runner
 ```
 systemctl start gitlab-runner
-
+```
 * 查看 GitLab Runner 的執行狀態
 ```
 systemctl status gitlab-runner
-
+```
 * 註冊到CI/CD server
 ```
 sudo gitlab-ci-runner register
-
+```
 >enter url:CI/CD server ip
 >
 >token:CI/CD token
@@ -107,7 +107,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 ## Kubernetes setup & install
 
-Kubernetes 是由 Google 與RedHat 公司共同主導的開放原始碼容器編排 專案,它起源於 Google 公司的 Borg 系統,所以它在超大規模叢集管理方面的經驗明顯優於其他容器編排技術
+Kubernetes 是由 Google 與RedHat 公司共同主導的開放原始碼容器編排專案,它起源於 Google 公司的 Borg 系統,所以它在超大規模叢集管理方面的經驗明顯優於其他容器編排技術
 
 在功能上。Kubernetes 是一種綜合的、以容器建構分散式系統為基礎的 基礎架構環境。它不僅能夠實現基本的拉取映像檔和執行容器,還可以 提供路由閘道、水平擴充、監控、備份、災難恢復等一系列執行維護能力。
 
@@ -131,27 +131,27 @@ Hit:2 http://cn.archive.ubuntu.com/ubuntu focal-updates InRelease
 Hit:3 http://cn.archive.ubuntu.com/ubuntu focal-backports InRelease 
 Hit:4 http://cn.archive.ubuntu.com/ubuntu focal-security InRelease) 
 Get:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
-
+```
 
 * 修改 Docker 作業系統限制
 ```
 cd /etc/default/grub 
 GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"
-
+```
 * 重新啟動伺服器
 ```
 update-grub
 reboot
-
+```
 * 禁用虛擬記憶體
 ```
 /opt/kubernetes-config# swapoff -a
-
+```
 
 * 啟動Docker 服務
 ```
 systemctl enable dooker.service
-
+```
 #### 部署 Master 節點
 ```
 cd /opt/kubernetes-config
@@ -175,12 +175,12 @@ kubernetesVersion: "vl.18.1"
 ```
 
 * see the Master nodes images
-
+```
     docker images
-
+```
 
 * 檢查Pod的狀態
-
+```
     /opt/kubernetes-config kubectl get pods -n kube-system
 ``````
 
@@ -196,7 +196,7 @@ kubeadm join <MasterIP> --token <Mastertoken>
 mkdir -p $HOME/.kube
 scp root@10.211.55.6:$HOME/.kube/config $HOME/.kube/
 sudo chown $(id -u):S (id -g) SHOME/.kube/config
-
+```
 * 就可以在 Worker 和 Master 節點執行節點狀態查看
 ```
 kubectl get nodes
@@ -204,13 +204,13 @@ kubectl get nodes
 >kubenetesnode02
 >
 >kubernetesnode01 ROLES:master
-
+```
 
 * 準備 GitLab CI/CD server Kubernetes 環境
 ```
 snap install kubectl -classic
 kubectl version -client
-
+```
 
 * setup "/kube/config" 設定檔中 Kubernetes 叢集的造訪網址及存取證書等資訊
 
@@ -254,5 +254,5 @@ kubectl version -client
 ```
 its show these:
 
-devops-demo 1/1 Running 0   0h10m   10.32.0.6   kubernetes <none> <none>
+**devops-demo 1/1 Running 0   0h10m   10.32.0.6   kubernetes <none> <none>**
 
