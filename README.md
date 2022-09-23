@@ -1,8 +1,5 @@
 # devops-demo
 
-# devops-demo
- 
- 
 # DevOps-demo 發佈系統流程
 
 *DevOps-demo 發佈系統,主要是利用GitLab 提供的CI機制,來實現在程式發生提交或合併等事件時自動觸發預設的CI/CD流程。*
@@ -69,10 +66,10 @@ sudo gitlab-ctl restart
 * 在Linux伺服器上部署 GitLab Runner,命令如下: +透過道命令增加映像檔倉庫
 ```
 docker run -d --name gitlab-runner --restart always 
-  -v /srv/gitlab-runner/config:/etc/gitlab-runner 
-  -v /var/run/docker.sock:/var/run/docker.sock 
-  gitlab/gitlab-runner:latest
-  ```
+-v /srv/gitlab-runner/config:/etc/gitlab-runner 
+-v /var/run/docker.sock:/var/run/docker.sock 
+gitlab/gitlab-runner:latest
+```
 * 啟動 GitLab Runner
 ```
 sudo apt-get install --reinstall systemd
@@ -178,13 +175,13 @@ kubernetesVersion: "vl.18.1"
 
 * see the Master nodes images
 ```
-    docker images
+docker images
 ```
 
 * 檢查Pod的狀態
 ```
-    /opt/kubernetes-config kubectl get pods -n kube-system
-``````
+/opt/kubernetes-config kubectl get pods -n kube-system
+```
 
 #### 部署 Kubernetes 的 Worker 節點
 
@@ -245,17 +242,18 @@ kubectl version -client
 
 ### 將微服務應用自動發佈到 Kubernetes 叢集中 
 ```
-    docker run name consul -p 8500:8500 -v /tmp/consul/conf/:/consul/conf/
-    -v/tmp/consul/data/:/consul/data/ -d consul
+docker run name consul -p 8500:8500 -v /tmp/consul/conf/:/consul/conf/
+-v/tmp/consul/data/:/consul/data/ -d consul
 ```
 
 ### 連接 Kubernetes 叢集,查看Pod 執行
 
 ```
-    kubectl get po -n asandy1023 -o wide
+kubectl get po -n asandy1023 -o wide
 ```
 its show these:
-NAME  READY STATUS  RESTARTS  AGE IP NODE NOMINATED NODE  READINESS GATES
+
+**NAME  READY STATUS  RESTARTS  AGE IP NODE NOMINATED NODE  READINESS GATES**
 
 **devops-demo 1/1 Running 0   0h10m   10.32.0.6   kubernetes <none> <none>**
 
