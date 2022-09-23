@@ -1,5 +1,7 @@
 # devops-demo
 
+Docker image: https://hub.docker.com/repository/docker/asandy1023/devops-demo
+
 # DevOps-demo 發佈系統流程
 
 *DevOps-demo 發佈系統,主要是利用GitLab 提供的CI機制,來實現在程式發生提交或合併等事件時自動觸發預設的CI/CD流程。*
@@ -14,6 +16,7 @@ Docker 映像檔發佈至Docker Hub中
 ## 部署 GitLab 程式倉庫
 
 ### Ubantu部署 GitLab-ce
+
 
 * update本地套件
 ```
@@ -56,7 +59,6 @@ sudo gitlab-ctl restart
 
 
 
-
 ## 部署 GitLab Runner
 
 *GitLab Runner 建構任務部署 GitLab Runner 元件*
@@ -93,14 +95,14 @@ sudo gitlab-ci-runner register
 
 
 
-
-
 * install Maven 及 Docker 環境
 ```
 apt install maven
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
+
+
 
 ## Kubernetes setup & install
 
@@ -109,6 +111,9 @@ Kubernetes 是由 Google 與RedHat 公司共同主導的開放原始碼容器編
 在功能上。Kubernetes 是一種綜合的、以容器建構分散式系統為基礎的 基礎架構環境。它不僅能夠實現基本的拉取映像檔和執行容器,還可以 提供路由閘道、水平擴充、監控、備份、災難恢復等一系列執行維護能力。
 
 更重要的是,Kubernetes 可以按照使用者的意願和整個系統的規則。 高度自動化地處理容器之間的各種關係實現「編排」能力。
+
+
+
 
 #### 使用 Kubeadm,簡單快速部署Kubernetes 叢集
 
@@ -149,6 +154,10 @@ reboot
 ```
 systemctl enable dooker.service
 ```
+
+
+
+
 ### 部署 Master 節點
 ```
 cd /opt/kubernetes-config
@@ -180,6 +189,8 @@ docker images
 ```
 /opt/kubernetes-config kubectl get pods -n kube-system
 ```
+
+
 
 ### 部署 Kubernetes 的 Worker 節點
 
@@ -238,11 +249,16 @@ kubectl version -client
 ```
 
 
+
+
 ### 將微服務應用自動發佈到 Kubernetes 叢集中 
 ```
 docker run name consul -p 8500:8500 -v /tmp/consul/conf/:/consul/conf/
 -v/tmp/consul/data/:/consul/data/ -d consul
 ```
+
+
+
 
 ## 連接 Kubernetes 叢集,查看Pod 執行
 
