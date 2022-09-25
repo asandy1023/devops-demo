@@ -85,13 +85,13 @@ systemctl status gitlab-runner
 ```
 * 註冊到CI/CD server
 ```
-sudo gitlab-ci-runner register
+sudo gitlab-runner register
 ```
 >enter url:CI/CD server ip
 >
 >token:CI/CD token
 >
->executor:ssh or kubernetes
+>executor:shell or kubernetes
 
 
 
