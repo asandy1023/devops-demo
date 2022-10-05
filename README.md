@@ -256,10 +256,12 @@ kubectl version -client
 docker run name consul -p 8500:8500 -v /tmp/consul/conf/:/consul/conf/
 -v/tmp/consul/data/:/consul/data/ -d consul
 ```
+
 * .gitlab-ci.yml, deploy階段將自動發佈到 Kubernete
+```
 deploy-test:
   stage: deploy
-
+```
 
 
 ## 連接 Kubernetes 叢集, 查看Pod 執行
