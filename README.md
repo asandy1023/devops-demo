@@ -119,6 +119,7 @@ Kubernetes 是由 Google 與RedHat 公司共同主導的開放原始碼容器編
 
 * 安裝 Kubeadm 及Docker 環境
 
+這裡省略了一些流程，實際還是依照官方文件來做較保險
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
 ```
