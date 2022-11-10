@@ -32,7 +32,7 @@ docker-push:
     - docker build --pull -t "$CI_REGISTRY_IMAGE" .
     - docker push "$CI_REGISTRY_IMAGE"
 
-#將應用發佈至Kubernetes測試集羣（這裡指定爲手動確認方式）
+#將應用發佈至Kubernetes測試集（這裡指定爲手動確認方式）
 deploy-test:
   stage: deploy
   when: manual
