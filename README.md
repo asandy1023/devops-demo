@@ -2,6 +2,8 @@
 
 Docker image: https://hub.docker.com/repository/docker/asandy1023/devops-demo
 
+GitLab runner setting and CI test: https://youtu.be/Q3U7JS7JqO4 & https://youtu.be/WXeon_jLOd8
+
 # DevOps-demo 發佈系統流程
 
 *DevOps-demo 發佈系統,主要是利用GitLab 提供的CI機制,來實現在程式發生提交或合併等事件時自動觸發預設的CI/CD流程。*
